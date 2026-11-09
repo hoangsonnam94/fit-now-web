@@ -1,0 +1,106 @@
+---
+const links = [
+  { href: '#lop-hoc', label: 'Lớp học' },
+  { href: '#goi-tap', label: 'Gói tập' },
+  { href: '#ket-qua', label: 'Kết quả' },
+  { href: '#bang-gia', label: 'Bảng giá' },
+  { href: '#hlv', label: 'HLV' },
+];
+---
+
+<header
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+    <a href="#top" class="group flex min-h-[44px] items-center gap-2.5" aria-label="FIT NOW — về đầu trang">
+      <span class="grid h-9 w-9 place-items-center rounded-lg bg-brand text-[#0A0A0A] shadow-[0_0_24px_rgba(253,242,1,.45)]">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="font-display text-xl uppercase leading-none tracking-[0.12em]">
+        Fit<span class="text-brand">Now</span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Điều hướng chính">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class="text-sm font-medium text-ink-2 transition-colors hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+          >
+            {l.label}
+          </a>
+        ))
+      }
+      <a
+        href="#lien-he"
+        class="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-[#0A0A0A] transition duration-200 hover:bg-brand-light hover:shadow-[0_0_28px_rgba(253,242,1,.5)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+      >
+        Đặt lịch thử
+      </a>
+    </nav>
+
+    <button
+      id="nav-toggle"
+      type="button"
+      class="grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Mở menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="mx-4 mb-2 hidden overflow-hidden rounded-2xl border border-white/10 bg-bg-soft/95 p-2 backdrop-blur-xl md:hidden"
+  >
+    <nav class="flex flex-col" aria-label="Điều hướng di động">
+      {
+        links.map((l) => (
+          <a href={l.href} class="rounded-xl px-4 py-3.5 text-base font-medium text-ink-2 hover:bg-white/5 hover:text-ink">
+            {l.label}
+          </a>
+        ))
+      }
+      <a href="#lien-he" class="mt-1 rounded-xl bg-brand px-4 py-3.5 text-center text-base font-bold text-[#0A0A0A]">
+        Đặt lịch thử miễn phí
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const nav = document.getElementById('site-nav')!;
+  const toggle = document.getElementById('nav-toggle')!;
+  const menu = document.getElementById('mobile-menu')!;
+
+  const setScrolled = () => {
+    const scrolled = window.scrollY > 24;
+    nav.classList.toggle('bg-bg/80', scrolled);
+    nav.classList.toggle('backdrop-blur-xl', scrolled);
+    nav.classList.toggle('border-b', scrolled);
+    nav.classList.toggle('border-white/5', scrolled);
+  };
+  setScrolled();
+  window.addEventListener('scroll', setScrolled, { passive: true });
+
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+  });
+
+  menu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

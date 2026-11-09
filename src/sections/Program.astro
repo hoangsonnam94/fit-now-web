@@ -1,0 +1,100 @@
+---
+const pillars = [
+  {
+    title: 'Tập luyện sôi động',
+    desc: 'Work Out, Kettle Bell (kháng lực) + Step, Jumping, Tabata (cardio). Mỗi lớp theo nhạc, năng lượng cao — HLV trẻ, năng động chỉ dẫn từng động tác.',
+    icon: 'flame',
+  },
+  {
+    title: 'Dinh dưỡng Herbalife',
+    desc: 'Sử dụng trà NRG + bữa ăn dinh dưỡng theo gói: Cơ bản dùng F1, Nâng cao thêm PPP, Tối ưu thêm H24 Rebuild.',
+    icon: 'leaf',
+  },
+  {
+    title: 'Chế độ ăn cá nhân hóa',
+    desc: 'Lên thực đơn riêng theo thể trạng, mục tiêu và lịch sinh hoạt của từng học viên — không áp đặt máy móc.',
+    icon: 'plate',
+  },
+  {
+    title: 'Group coaching hằng ngày',
+    desc: 'Tạo nhóm riêng theo dõi ăn uống mỗi ngày, nhắc nhở, giải đáp thắc mắc và giữ động lực cùng bạn.',
+    icon: 'chat',
+  },
+  {
+    title: 'Kiến thức chọn thực phẩm',
+    desc: 'Dạy cách đọc nhãn, chọn thực phẩm phù hợp mục tiêu giảm cân — thoát khỏi cảnh "không biết ăn gì".',
+    icon: 'book',
+  },
+  {
+    title: 'Tính calories & macro',
+    desc: 'Hướng dẫn cách tính lượng calories và đạm–đuờng–béo (macro) phù hợp từng học viên.',
+    icon: 'calc',
+  },
+];
+---
+
+<section id="goi-tap" class="relative py-24 sm:py-32">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-bg via-bg-soft to-bg"></div>
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+      <div class="max-w-2xl">
+        <div class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Gói tập toàn diện</div>
+        <h2 class="mt-3 text-4xl font-display uppercase leading-[0.95] sm:text-5xl lg:text-6xl">
+          KHÔNG CHỈ TẬP —<br/>
+          <span class="text-brand">ĂN, COACHING ĐẾN TẬN NGUYỆN VỌNG.</span>
+        </h2>
+        <p class="mt-4 text-lg text-ink-2">
+          Mỗi gói tập bao gồm tập luyện + trà NRG + bữa ăn dinh dưỡng + chế độ ăn cá nhân hóa + group coaching hằng ngày. Bạn được hướng dẫn từ gốc, không chỉ "đi tập cho có".
+        </p>
+      </div>
+    </div>
+
+    <!-- Wedotransformations achievement -->
+    <div class="mt-12 overflow-hidden rounded-3xl border border-brand/30 bg-gradient-to-r from-brand/15 via-brand/5 to-transparent p-6 sm:p-8" data-reveal>
+      <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+        <div class="grid h-20 w-20 shrink-0 place-items-center rounded-2xl bg-brand text-[#0A0A0A] shadow-[0_0_40px_rgba(253,242,1,.35)]">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 21h8M9 17h6M12 17v4M7 4h10v3a5 5 0 0 1-10 0V4Z" />
+            <path d="M7 4a3 3 0 0 0-3 3c0 1.5 1 2.5 2 3M17 4a3 3 0 0 1 3 3c0 1.5-1 2.5-2 3" />
+          </svg>
+        </div>
+        <div>
+          <div class="text-xs font-bold uppercase tracking-[0.2em] text-brand">Wedotransformations 21 ngày</div>
+          <h3 class="mt-1 font-display text-2xl uppercase tracking-wide text-ink sm:text-3xl">5 hội viên đạt giải — 3 mùa liên tiếp</h3>
+          <p class="mt-1 text-sm text-ink-2 sm:text-base">Chúng tôi tự hào có <strong class="text-brand">5 hội viên đạt giải 250$</strong> trong cuộc thi thay đổi vóc dáng 21 ngày — minh chứng cho kết quả giảm cân thật sự từ chương trình này.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        pillars.map((p) => (
+          <div class="rounded-2xl border border-white/10 bg-surface p-6 transition duration-300 hover:border-brand/30" data-reveal>
+            <div class="grid h-12 w-12 place-items-center rounded-xl bg-brand/15 text-brand">
+              {p.icon === 'flame' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c2 4 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3 1-5 1.5 1 2.5 2 2.5 4 0-1.5.5-4 1.5-6z"/></svg>
+              )}
+              {p.icon === 'leaf' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20c8 0 16-8 16-16-9 0-16 7-16 16z"/><path d="M4 20c3-3 6-6 10-9"/></svg>
+              )}
+              {p.icon === 'plate' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/></svg>
+              )}
+              {p.icon === 'chat' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              )}
+              {p.icon === 'book' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2z"/><path d="M9 8h6M9 12h6"/></svg>
+              )}
+              {p.icon === 'calc' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>
+              )}
+            </div>
+            <h3 class="mt-4 font-display text-lg uppercase tracking-wide text-ink">{p.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-2">{p.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

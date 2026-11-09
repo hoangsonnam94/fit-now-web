@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand — extracted from FIT NOW logo (#FDF201 yellow) */
+  --color-brand: #FDF201;
+  --color-brand-dark: #D4CE00;
+  --color-brand-light: #FEF9A3;
+  --color-accent: #FFFFFF;
+  --color-accent-soft: #F5F5F5;
+
+  /* Surfaces (dark mode primary — black & yellow theme) */
+  --color-bg: #0A0A0A;
+  --color-bg-soft: #141414;
+  --color-surface: #1A1A1A;
+  --color-surface-2: #262626;
+  --color-border: #2E2E2E;
+  --color-border-soft: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --color-ink: #FFFFFF;
+  --color-ink-2: #D4D4D4;
+  --color-ink-muted: #8A8A8A;
+
+  /* Fonts */
+  --font-display: 'Oswald', 'Impact', system-ui, sans-serif;
+  --font-body: 'Epilogue', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  ::selection {
+    background: var(--color-brand);
+    color: #0A0A0A;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-body {
+  font-family: var(--font-body);
+}

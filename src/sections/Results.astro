@@ -1,0 +1,84 @@
+---
+const results = [
+  { name: 'Dương Nga', before: '/media/xform-duong-nga-1.jpg', after: '/media/xform-duong-nga-21.jpg', bw: 1080, bh: 1920, aw: 1080, ah: 1920 },
+  { name: 'Lê Lý', before: '/media/xform-le-ly-1.jpg', after: '/media/xform-le-ly-21.jpg', bw: 1080, bh: 1920, aw: 1080, ah: 1920 },
+  { name: 'Ngọc Sam', before: '/media/xform-ngoc-sam-1.jpg', after: '/media/xform-ngoc-sam-21.jpg', bw: 1080, bh: 1920, aw: 960, ah: 1280 },
+  { name: 'Thu Wendy', before: '/media/xform-thu-wendy-1.jpg', after: '/media/xform-thu-wendy-21.jpg', bw: 1080, bh: 1440, aw: 1080, ah: 1440 },
+  { name: 'Tô Thị Vân Anh', before: '/media/xform-to-thi-van-anh-1.jpg', after: '/media/xform-to-thi-van-anh-21.jpg', bw: 1080, bh: 1440, aw: 1080, ah: 1440 },
+];
+---
+
+<section id="ket-qua" class="relative py-24 sm:py-32">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-bg via-bg-soft to-bg"></div>
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="text-center" data-reveal>
+      <div class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Kết quả thật</div>
+      <h2 class="mt-3 text-4xl font-display uppercase leading-[0.95] sm:text-5xl lg:text-6xl">
+        21 NGÀY.
+        <span class="text-brand">THAY ĐỔI THẤY RÕ.</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-ink-2">
+        Đây là hình ảnh thật của các học viên sau 21 ngày tham gia chương trình Wedotransformations tại FIT NOW Ocean Park 1.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        results.map((r, i) => (
+          <article class="overflow-hidden rounded-3xl border border-white/10 bg-surface" data-reveal data-delay={String(Math.min(i % 3, 3))}>
+            <div class="grid grid-cols-2 gap-px bg-white/10">
+              <div class="relative">
+                <img
+                  src={r.before}
+                  alt={`${r.name} — ngày 1`}
+                  width={r.bw}
+                  height={r.bh}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[3/4] w-full object-cover object-top"
+                />
+                <span class="absolute left-2 top-2 rounded-full bg-black/70 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-white backdrop-blur-sm">
+                  Ngày 1
+                </span>
+              </div>
+              <div class="relative">
+                <img
+                  src={r.after}
+                  alt={`${r.name} — ngày 21`}
+                  width={r.aw}
+                  height={r.ah}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[3/4] w-full object-cover object-top"
+                />
+                <span class="absolute left-2 top-2 rounded-full bg-brand px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-[#0A0A0A]">
+                  Ngày 21
+                </span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between px-5 py-4">
+              <h3 class="font-display text-lg uppercase tracking-wide text-ink">{r.name}</h3>
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand">21 ngày</span>
+            </div>
+          </article>
+        ))
+      }
+
+      <!-- highlight card -->
+      <article class="flex flex-col justify-center rounded-3xl border border-brand/40 bg-gradient-to-br from-brand/15 to-transparent p-7" data-reveal>
+        <div class="font-display text-5xl text-brand">5</div>
+        <h3 class="mt-2 font-display text-xl uppercase tracking-wide text-ink">Hội viên đạt giải 250$</h3>
+        <p class="mt-2 text-sm leading-relaxed text-ink-2">
+          Trong 3 mùa giải Wedotransformations liên tiếp — minh chứng cho kết quả giảm cân có thật từ chương trình tại FIT NOW.
+        </p>
+        <a href="#lien-he" class="mt-5 inline-flex items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-bold text-[#0A0A0A] transition hover:bg-brand-light">
+          Đăng ký thử 3 buổi
+        </a>
+      </article>
+    </div>
+
+    <p class="mt-8 text-center text-xs text-ink-muted">
+      Hình ảnh được cung cấp và đồng ý sử dụng bởi học viên.
+    </p>
+  </div>
+</section>

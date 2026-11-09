@@ -1,0 +1,80 @@
+---
+const reviews = [
+  {
+    name: 'Hội viên A',
+    role: 'Gói Cơ Bản · 2 tháng',
+    text: 'Mục tiêu giảm 5kg + tăng năng lượng. Sau 2 tháng tôi đã vượt qua mục tiêu. Không chỉ giảm cân, mà còn học được cách ăn uống đúng. HLV + group coaching giúp tôi có động lực hàng ngày.',
+    stars: 5,
+  },
+  {
+    name: 'Hội viên B',
+    role: 'Gói Nâng Cao · 3 tháng',
+    text: 'Tôi rất ấn tượng với chương trình. Lớp tập sôi động, không lúc nào buồn tẻ. Chế độ ăn cá nhân + group coaching theo dõi hàng ngày = kết quả thực sự. Giảm cân đúng kế hoạch!',
+    stars: 5,
+  },
+  {
+    name: 'Hội viên C',
+    role: 'Gói Tối Ưu · 3 tháng',
+    text: 'Đây không phải chỉ phòng tập — đây là chương trình toàn diện. Từ tập luyện đến dinh dưỡng đến coaching, tất cả đều được hỗ trợ. Kết quả: giảm 8kg, xẹp bụng, tăng sức mạnh.',
+    stars: 5,
+  },
+  {
+    name: 'Hội viên D',
+    role: 'Gói Nâng Cao · 2 tháng',
+    text: 'Lớp Work Out + Tabata cực đã! HLV hướng dẫn kỹ, không bao giờ cảm thấy bị đơn độc. Cộng đồng thân thiện, ai cũng có kết quả giảm cân. Rất recommend!!!',
+    stars: 5,
+  },
+];
+---
+
+<section id=”danh-gia” class=”relative py-24 sm:py-32”>
+  <div class=”absolute inset-0 -z-10 bg-gradient-to-b from-bg via-bg-soft to-bg”></div>
+  <div class=”mx-auto max-w-7xl px-5 sm:px-8”>
+    <div class=”text-center” data-reveal>
+      <div class=”text-xs font-semibold uppercase tracking-[0.2em] text-brand”>Kết quả thực</div>
+      <h2 class=”mt-3 text-4xl font-display uppercase leading-[0.95] sm:text-5xl lg:text-6xl”>
+        HỌ GIẢM CÂN.<br/>
+        <span class=”text-brand”>VÀ BẠN SẼ LÀM ĐƯỢC.</span>
+      </h2>
+      <p class=”mx-auto mt-4 max-w-2xl text-lg text-ink-2”>
+        100% hội viên có kết quả giảm cân rõ rệt. Đây là lời từ những người đã trải qua chương trình.
+      </p>
+    </div>
+
+    <div class=”mt-14 grid gap-5 md:grid-cols-2”>
+      {
+        reviews.map((r, i) => (
+          <article
+            class=”rounded-3xl border border-white/10 bg-surface p-7 transition duration-300 hover:border-white/20”
+            data-reveal
+            data-delay={String(Math.min(i, 3))}
+          >
+            <div class=”flex items-center gap-1 text-brand” aria-label={`${r.stars} trên 5 sao`}>
+              {Array.from({ length: 5 }).map((_, j) => (
+                <svg width=”16” height=”16” viewBox=”0 0 24 24” fill={j < r.stars ? 'currentColor' : 'none'} stroke=”currentColor” stroke-width=”1.5” aria-hidden=”true”>
+                  <path d=”M12 2 15 8h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z” />
+                </svg>
+              ))}
+            </div>
+            <p class=”mt-4 text-base leading-relaxed text-ink-2”>”{r.text}”</p>
+            <div class=”mt-6 flex items-center gap-3 border-t border-white/10 pt-5”>
+              <div class=”grid h-11 w-11 place-items-center rounded-full bg-brand/20 font-display text-sm font-bold text-brand”>
+                {r.name.split(' ').map((w) => w[0]).join('')}
+              </div>
+              <div>
+                <div class=”font-bold text-ink”>{r.name}</div>
+                <div class=”text-xs text-ink-muted”>{r.role}</div>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class=”mt-12 text-center”>
+      <p class=”text-sm text-ink-muted”>
+        💡 <strong>Ghi chú:</strong> Thay những review trên bằng review/kết quả thực từ hội viên + ảnh before/after (nếu có). Landing này sẽ còn hiệu quả hơn!
+      </p>
+    </div>
+  </div>
+</section>

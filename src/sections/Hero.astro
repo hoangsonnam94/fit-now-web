@@ -1,0 +1,120 @@
+---
+---
+
+<section
+  id="top"
+  aria-labelledby="hero-headline"
+  class="relative flex h-screen min-h-[640px] w-full flex-col overflow-hidden bg-[#0A0A0A] text-[#F5F5F5]"
+>
+  <!-- Ảnh thật sau ca tập — nửa phải -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <img
+      src="/media/afterclass-01.jpg"
+      alt=""
+      fetchpriority="high"
+      decoding="sync"
+      width="1526"
+      height="2035"
+      class="absolute right-0 top-0 h-full w-full object-cover object-[75%_top] md:w-[58%]"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to right, #0A0A0A 0%, #0A0A0A 40%, rgba(10,10,10,0.7) 60%, rgba(10,10,10,0) 84%);"
+    >
+    </div>
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to top, #0A0A0A 0%, rgba(10,10,10,0.35) 18%, rgba(10,10,10,0) 38%);"
+    >
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="relative z-10 flex shrink-0 items-center justify-between px-6 py-6 md:px-16">
+    <a href="#top" class="flex min-h-[44px] items-center gap-3" aria-label="FIT NOW — về đầu trang">
+      <span class="grid h-10 w-10 shrink-0 place-items-center bg-[#FDF201]">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z" fill="#0A0A0A"></path>
+        </svg>
+      </span>
+      <span
+        class="text-[15px] font-black uppercase leading-none tracking-[0.18em] text-[#F5F5F5] md:text-base"
+        style="font-family: 'Oswald', 'Archivo Black', system-ui, sans-serif;"
+      >
+        Fit<span class="text-[#FDF201]">Now</span>
+      </span>
+    </a>
+
+    <div
+      class="hidden items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F5F5F5]/60 md:flex"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-[#FDF201]" aria-hidden="true"></span>
+      Ocean Park 1 · Hà Nội
+    </div>
+  </header>
+
+  <!-- Headline block -->
+  <div class="relative z-10 flex flex-1 flex-col justify-center px-6 pb-6 md:px-16">
+    <div class="max-w-[1000px]">
+      <div
+        class="mb-6 inline-flex items-center gap-2.5 border border-[#FDF201]/30 bg-[#0A0A0A]/55 px-4 py-2 backdrop-blur-sm"
+      >
+        <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-[#FDF201]" aria-hidden="true"></span>
+        <span class="text-[10px] font-bold uppercase tracking-[0.28em] text-[#FDF201] md:text-[11px]">
+          Group X · Kết quả đo được
+        </span>
+      </div>
+
+      <h1
+        id="hero-headline"
+        class="text-[clamp(3.25rem,11.5vw,8.5rem)] font-black uppercase leading-[0.87] tracking-[-0.03em] text-[#F5F5F5]"
+        style="font-family: 'Oswald', 'Archivo Black', system-ui, sans-serif;"
+      >
+        Tìm phòng tập,
+        <br />
+        <span class="text-[#FDF201]">giảm cân thật.</span>
+      </h1>
+
+      <p class="mt-6 max-w-[460px] text-[15px] leading-[1.4] text-[#F5F5F5]/80 md:text-lg">
+        Phòng Group X ở Hà Nội: tập nhóm, có dinh dưỡng, có người đẩy bạn đến đích.
+      </p>
+
+      <div class="mt-6 flex flex-row items-center gap-5">
+        <a
+          href="#lien-he"
+          class="inline-flex min-h-[56px] items-center justify-center gap-3 bg-[#FDF201] px-7 text-[13px] font-black uppercase tracking-[0.18em] text-[#0A0A0A] transition-colors duration-150 hover:bg-[#F5E400] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FDF201] md:px-8 md:text-sm"
+        >
+          Đăng ký 3 buổi thử miễn phí
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 12h14M13 6l6 6-6 6"
+              stroke="#0A0A0A"
+              stroke-width="2.5"
+              stroke-linecap="square"
+              stroke-linejoin="miter"></path>
+          </svg>
+        </a>
+        <span
+          class="hidden text-[11px] font-semibold uppercase leading-snug tracking-[0.2em] text-[#F5F5F5]/50 sm:block"
+        >
+          Không cần thẻ hội viên
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Meta line -->
+  <div
+    class="relative z-10 shrink-0 border-t border-[#FDF201]/15 bg-[#0A0A0A]/85 px-6 py-6 backdrop-blur-sm md:px-16"
+  >
+    <div
+      class="flex max-w-[1000px] flex-wrap items-center gap-x-6 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F5F5F5]/55 md:text-[11px]"
+    >
+      <span>05 khung giờ mỗi ngày</span>
+      <span class="h-3 w-px bg-[#FDF201]/30" aria-hidden="true"></span>
+      <span>100% hội viên có kết quả</span>
+      <span class="h-3 w-px bg-[#FDF201]/30" aria-hidden="true"></span>
+      <span class="text-[#FDF201]">Buổi đầu miễn phí</span>
+    </div>
+  </div>
+</section>

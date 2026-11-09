@@ -1,0 +1,74 @@
+---
+const slots = [
+  { time: '05:30 – 06:30', label: 'Ca sáng sớm', note: 'Tập xong đi làm', icon: 'sunrise' },
+  { time: '08:00 – 09:00', label: 'Ca sáng', note: 'Khởi động ngày mới', icon: 'sun' },
+  { time: '12:30 – 13:30', label: 'Ca trưa', note: 'Giờ nghỉ trưa', icon: 'clock' },
+  { time: '15:00 – 16:00', label: 'Ca chiều', note: 'Rảnh buổi chiều', icon: 'clock' },
+  { time: '17:45 – 18:45', label: 'Ca tan làm', note: 'Sau giờ làm', icon: 'sunset' },
+  { time: '19:00 – 20:00', label: 'Ca tối', note: 'Tập tối năng lượng', icon: 'moon' },
+];
+---
+
+<section id="lich-tap" class="relative py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+      <div class="max-w-2xl">
+        <div class="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Lịch tập</div>
+        <h2 class="mt-3 text-4xl font-display uppercase leading-[0.95] sm:text-5xl lg:text-6xl">
+          6 CA MỖI NGÀY.
+          <span class="text-brand">CHỌN GIỜ BẠN RẢNH.</span>
+        </h2>
+        <p class="mt-4 text-lg text-ink-2">
+          Mỗi ngày có 6 ca tập, sáng đến tối. Lịch các môn thay đổi từng tháng — liên hệ để nhận lịch môn của tháng này.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        slots.map((s, i) => (
+          <div
+            class="group relative overflow-hidden rounded-2xl border border-white/10 bg-surface p-6 transition duration-300 hover:border-brand/40 hover:bg-surface-2"
+            data-reveal
+            data-delay={String(Math.min(i % 3, 3))}
+          >
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="font-display text-3xl tracking-wide text-brand">{s.time}</div>
+                <h3 class="mt-2 text-lg font-bold text-ink">{s.label}</h3>
+                <p class="mt-0.5 text-sm text-ink-muted">{s.note}</p>
+              </div>
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand/10 text-brand">
+                {s.icon === 'sunrise' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M4.9 4.9l2.8 2.8M2 12h4M18 12h4M16.3 7.7l2.8-2.8M8 18a4 4 0 0 1 8 0"/><path d="M2 22h20"/></svg>
+                )}
+                {s.icon === 'sun' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+                )}
+                {s.icon === 'sunset' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10V2M4.9 12.9l-2.8 2.8M2 18h4M18 18h4M20.9 10.9l2.8-2.8M8 18a4 4 0 0 1 8 0"/><path d="M2 22h20"/></svg>
+                )}
+                {s.icon === 'moon' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                )}
+                {s.icon === 'clock' && (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                )}
+              </span>
+            </div>
+            <a
+              href="#lien-he"
+              class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-3 text-sm font-semibold text-ink transition duration-200 hover:border-brand/40 hover:bg-brand/10 hover:text-brand"
+            >
+              Đặt lịch ca này
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="mt-6 text-center text-sm text-ink-muted">
+      Lịch môn tập thay đổi theo từng tháng. Vui lòng xác nhận khi đặt lịch thử.
+    </p>
+  </div>
+</section>

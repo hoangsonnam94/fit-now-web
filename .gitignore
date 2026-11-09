@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.agents/
+.claude/
+/media/
+ui-ux-pro-max-skill-main/
+10k-websites-skill.zip
+.env
+.env.*
